@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@effect/sql": "npm:@effect/sql@^0.22.4",
+    "@std/assert": "jsr:@std/assert@1",
+    "effect": "npm:effect@^3.11.3"
+  }
+}
