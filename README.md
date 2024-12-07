@@ -1,5 +1,11 @@
 ## "Deno LSP breaks by creating / deleting a file"
 
+
+
+https://github.com/user-attachments/assets/03cbb42e-64ff-4688-8391-2eb8ec9543e6
+
+
+
 **To reproduce:**
 
 - `deno init`
