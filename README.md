@@ -1,4 +1,4 @@
-## "Deno LSP errors vanish suddently"
+## "Deno LSP breaks by creating / deleting a file"
 
 **To reproduce:**
 
@@ -20,11 +20,13 @@ const make = Model.makeRepository(ExampleModel, {
   tableName: 'examples',
   spanPrefix: 'ExampleRepo',
   idColumn: 'id',
-  thisPropertyDoesntExist: 'foobar'
 })
 ```
 
-After waiting for a while (maybe 2-3 mins), ALL OF THE ERRORS VANISH.
-Even the basic `px` object with `basdz` prop that isn't allowed doesn't show ANY errors.
+- Restart Deno LSP
+- Then, fidget around with the `make` function, call it, console log it, use it etc.
+- Then also make some errors in the file, remove them.
+- Then create a file `new-file.ts` / delete it
+- Then all of a sudden the `idColumn` breaks and infers to `never`. Now there is an error in `main.ts` for no reason.
 
-NO CLUE what might cause this.
+NO CLUE what might cause this. Happens soo randomly.

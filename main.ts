@@ -1,5 +1,5 @@
 import { Model } from "@effect/sql"
-import { Schema as S } from "effect"
+import { Effect, Schema as S } from "effect"
 
 export class ExampleModel extends Model.Class<ExampleModel>("ExampleModel")({
   id: Model.Generated(S.String),
@@ -10,8 +10,7 @@ export class ExampleModel extends Model.Class<ExampleModel>("ExampleModel")({
 const make = Model.makeRepository(ExampleModel, {
   tableName: 'examples',
   spanPrefix: 'ExampleRepo',
-  idColumn: 'id',
-  thisPropertyDoesntExist: 'foobar'
+  idColumn: 'id'
 })
 
 export type PizzaHut = {
@@ -20,7 +19,6 @@ export type PizzaHut = {
 
 const px: PizzaHut = {
   foo: 'bar',
-  basdz: false,
 }
 
 export function add(a: number, b: number): number {
